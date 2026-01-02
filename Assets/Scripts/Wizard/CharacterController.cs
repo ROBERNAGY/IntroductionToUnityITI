@@ -24,6 +24,7 @@ public class CharacterController2D : MonoBehaviour
     private static readonly int IsRunHash = Animator.StringToHash("isRun");
     private static readonly int IsJumpHash = Animator.StringToHash("isJump");
 
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -54,7 +55,6 @@ public class CharacterController2D : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
-
         if (jumpRequested && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
