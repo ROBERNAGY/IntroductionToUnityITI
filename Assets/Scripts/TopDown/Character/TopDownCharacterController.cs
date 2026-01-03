@@ -63,15 +63,7 @@ public class TopDownCharacterController : MonoBehaviour
     }
     private void UpdateMovement()
     {
-        if (movePosition.x !=0.0f && movePosition .y != 0.0f)
-        {
-            moveSpeed = 2.0f;
-        }
-        else
-        {
-            moveSpeed = 3.0f;
-        }
-        Vector2 newPosition = rb.position + movePosition * moveSpeed * Time.deltaTime; 
+        Vector2 newPosition = rb.position + movePosition.normalized * moveSpeed * Time.deltaTime; 
         rb.MovePosition(newPosition);
     }
 }
