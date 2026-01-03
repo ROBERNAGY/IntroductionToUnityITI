@@ -25,7 +25,8 @@ public class CharacterController2D : MonoBehaviour
     private Animator animator;
     private Transform playerTransform;
 
-
+    public bool hasTheKey = false;
+    public bool alive = true;
     private float moveInput;
     private bool jumpRequested;
     private bool isGrounded;
