@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Car
+  - Arrow
+  - Enemy
+  - Win
   layers:
   - Default
   - TransparentFX

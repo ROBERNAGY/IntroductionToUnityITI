@@ -1,10 +1,8 @@
-using NUnit.Framework.Constraints;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Animations.Rigging;
 
 public class TopDownCharacterController : MonoBehaviour
 {
+    public float health = 100.0f;
     Animator animator;
     private float horizontalInput;
     private float verticalInput;
@@ -13,16 +11,15 @@ public class TopDownCharacterController : MonoBehaviour
     private bool isWalking = false;
     Rigidbody2D rb;
     [SerializeField] private float moveSpeed =3.0f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        Debug.Log(health);
         ReadInput();
         UpdateAnimator();
     }
@@ -51,13 +48,11 @@ public class TopDownCharacterController : MonoBehaviour
         {
             animator.SetFloat("walkX" ,movePosition.x );
             animator.SetFloat("walkY" ,movePosition.y );
-            //Debug.Log(horizontalInput +"  " + verticalInput);
         }
         else
         {
             animator.SetFloat("idleX" ,lastInput.x );
             animator.SetFloat("idleY" ,lastInput.y );
-            //Debug.Log(lastInput.x +"  " + lastInput.y);
         }
         animator.SetBool("isMoving" , isWalking);
     }
@@ -65,5 +60,12 @@ public class TopDownCharacterController : MonoBehaviour
     {
         Vector2 newPosition = rb.position + movePosition.normalized * moveSpeed * Time.deltaTime; 
         rb.MovePosition(newPosition);
+    }
+     private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            health -=20.0f;
+        }
     }
 }
