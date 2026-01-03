@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/StreetTask.unity
-    guid: 7eef3dac580fbab49a2e31b4d56af80a
+    path: Assets/Scenes/TopDown.unity
+    guid: b84bb0ebc0a4e2f4f97f6c555f9b282a
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
