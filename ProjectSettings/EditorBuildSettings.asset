@@ -8,5 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StreetTask.unity
     guid: 7eef3dac580fbab49a2e31b4d56af80a
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 14ac905ef34432947b96a277fe6e3c9f,
+      type: 3}
   m_UseUCBPForAssetBundles: 0
