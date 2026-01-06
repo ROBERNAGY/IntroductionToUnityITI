@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "playerName": "Hero",
+      "playerHealth": 100,
+      "item": "Sword"
+    },
+    {
+      "playerName": "Mage",
+      "playerHealth": 80,
+      "item": "Staff"
+    }
+  ]
+}
